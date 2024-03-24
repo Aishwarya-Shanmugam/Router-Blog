@@ -1,0 +1,43 @@
+/* Add space between nav items */
+.nav-item {
+    font-size: larger;
+    font-weight: 500;
+    margin-right: 20px; /* Adjust the margin to add space between nav items */
+}
+
+/* Move nav items to the right corner */
+.navbar-nav {
+    margin-left: auto; /* Push nav items to the right */
+}
+
+/* Add space between right corner and the end of the navbar */
+.navbar {
+    padding-right: 20px; /* Adjust padding to add space between right corner and navbar */
+}
+
+/* Rest of your CSS styles */
+.nav-link {
+    position: relative;
+    color: rgb(234, 113, 33);
+    font-size: larger;
+}
+
+.nav-item:hover .nav-link {
+    color: #29600e; /* Change the text color on hover */
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    border-radius: 2px;
+    background-color: #1e0dba; /* Set the color of the underline */
+    transition: width 0.3s ease; /* Add smooth transition */
+}
+
+.nav-link:hover::after {
+    width: 100%; /* Expand the width on hover */
+}
