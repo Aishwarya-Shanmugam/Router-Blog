@@ -21,13 +21,13 @@ git clone https://github.com/your-username/react-router-dom-example.git
 Navigate to the project directory:
 
 ```bash
-cd react-router-dom-example
+cd routerblogexample
 ```
 
 Install dependencies:
 
 ```bash
-npm install
+npm install react-router dom
 ```
 
 ### Usage
@@ -35,8 +35,9 @@ npm install
 To start the development server, run:
 
 ```bash
-npm start
+npm run dev
 ```
+**Example**
 
 This will start the application at `http://localhost:3000`.
 
@@ -46,11 +47,11 @@ This project demonstrates the basic usage of React Router DOM for handling routi
 
 ### Components
 
-- **App.js**: Main component where routes are defined.
-- **Home.js**: Component for the home page.
-- **About.js**: Component for the about page.
-- **Contact.js**: Component for the contact page.
-- **NotFound.js**: Component for handling 404 errors.
+- **App.jsx**: Main component where routes are defined.
+- **main.jsx**: Component for the home page.
+- **card.jsx**: Component for the about page.
+- **nav.jsx**: Component for the contact page.
+- **career.jsx**: Component for handling 404 errors.
 
 ### Routes
 
@@ -59,19 +60,19 @@ Routes are defined in the `App.js` file using `BrowserRouter`, `Route`, and `Swi
 ```javascript
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import Home from './Home';
-import About from './About';
-import Contact from './Contact';
-import NotFound from './NotFound';
+import Home from './main';
+import About from './card';
+import Contact from './nav';
+import NotFound from './career';
 
 function App() {
   return (
     <BrowserRouter>
       <Switch>
-        <Route exact path="/" component={Home} />
-        <Route path="/about" component={About} />
-        <Route path="/contact" component={Contact} />
-        <Route component={NotFound} />
+        <Route exact path="/" component={main} />
+        <Route path="/card" component={card} />
+        <Route path="/nav" component={nav} />
+        <Route component={career} />
       </Switch>
     </BrowserRouter>
   );
@@ -94,13 +95,13 @@ function Header() {
       <nav>
         <ul>
           <li>
-            <Link to="/">Home</Link>
+            <Link to="/">main</Link>
           </li>
           <li>
-            <Link to="/about">About</Link>
+            <Link to="/card">About</Link>
           </li>
           <li>
-            <Link to="/contact">Contact</Link>
+            <Link to="/nav">Contact</Link>
           </li>
         </ul>
       </nav>
